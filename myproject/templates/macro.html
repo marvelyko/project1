@@ -1,0 +1,39 @@
+{% macro products(product_list) %}
+    {% for product in product_list %}
+        <div class="col-lg-3">
+            <div class="product-item">
+                <div class="product-title">
+                    <a href="product-detail.html">Product Name</a>
+                    <div class="ratting">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <div class="product-image">
+                    <a style="position: relative;" href="product-detail.html">
+                        <img src="{{product.image}}" alt="Product Image">
+                        <div class="progressivebar"><p>200KG/100KG</p>
+                        </div>                                        
+                    </a>
+                    <div class="product-action">
+                        <a href="cart.html"><i class="fa fa-cart-plus"></i></a>
+                        <a href="wishlist.html"><i class="fa fa-heart"></i></a>
+                        <a href="product-detail.html"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="product-price">
+                    <a href="product-detail.html"><h2>Details</h2></a>
+
+                    <h3><span>$</span>99</h3>
+                    <a class="btn" href="cart.html"><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                </div>
+                <div id="progress" style="height:20px">
+                        <div class="progress-bar progress-bar-striped" style="width:50%; height:20px">50%</div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endmacro %}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Breadcrumb Start -->
+<div class="breadcrumb-wrap">
+    <div class="container-fluid">
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Products</a></li>
+            <li class="breadcrumb-item active">Register</li>
+        </ul>
+    </div>
+</div>
+<!-- Breadcrumb End -->
+
+<!-- Login Start -->
+<div class="login">
+    <div class="container-fluid">
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger" role="alert">
+                {{message}}
+            </div>
+        {% endfor %}
+        <div class="row">
+            <div class="col-lg-6" id="register">
+                <div class="register-form">
+                    <div>
+                        <form class="row" method="POST">
+                            {{ form.hidden_tag() }}
+                            <div class="col-md-6">
+                                <label>First Name</label>
+                                {{form.name(class="form-control",type="text",placeholder="First Name")}}
+                            </div>
+                            <div class="col-md-6">
+                                <label>Last Name</label>
+                                {{form.surname(class="form-control",placeholder="Last Name")}}
+                            </div>
+                            <div class="col-md-6">
+                                <label>E-mail</label>
+                                {{form.email(class="form-control",placeholder="E-mail")}}
+                            </div>
+                            <div class="col-md-6">
+                                <label>Gender</label>
+                                {{form.gender(class="form-control")}}
+                            </div>
+                            <div class="col-md-6">
+                                <label>Password</label>
+                                {{form.password(class="form-control",placeholder="Password")}}
+                            </div>
+                            <div class="col-md-6">
+                                <label>Retype Password</label>
+                                {{form.confirm(class="form-control",placeholder="Password")}}
+                            </div>
+                            <div class="col-md-6">
+                                <label>Address</label>
+                                {{form.address( class="form-control",placeholder="Adress")}}
+                            </div>
+                            <div class="col-md-6">
+                                <label>Mobile</label>
+                                {{form.mobile( class="form-control",placeholder="Mobile")}}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="birthday">Birthday</label>
+                                {{form.birthday(class="form-control",type="date",id="birthday")}}
+                            </div>
+                            <div class="col-md-12">
+                                {{form.submit(class="btn")}}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
